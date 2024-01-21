@@ -3,33 +3,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fetch user details from the server
   fetch(`http://localhost:5174/getUserDetails?user_id=${user_id}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json(); // Parse the response body as JSON
-    })
-    .then((user) => {
-      console.log("Parsed JSON:", user);
+      .then((response) => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json(); // Parse the response body as JSON
+      })
+      .then((user) => {
+          console.log("Parsed JSON:", user);
+          const imgSrc = "../../backend/uploads/" + user.image;
+          console.log(user.name);
 
-      // Set user details to the form
-      document.getElementById("nameInputSide").value = user.name || "";
-      
-      const imagePreview = document.getElementById("imagePreviewSide");
-      const img = document.createElement("img");
-      img.src = user.image || "";
-      imagePreview.appendChild("../../backend/uploads/".img);
+          // Set user details to the form
+          document.getElementById("nameInputSide").value = user.name || "";
 
-      const isAdminText = user.isAdmin ? "Accepted By Admin" : "Not Accepted By Admin";
-      const adminStatus = document.getElementById("adminStatus");
-      adminStatus.textContent = isAdminText;
+          const imagePreview = document.getElementById("imagePreviewSide");
+          const img = document.createElement("img");
+          img.src = imgSrc || "";
+          img.style.maxWidth = "100%";
+          img.style.maxHeight = "100%";
+          imagePreview.appendChild(img);
 
-      // Hide or show the admin status based on the isAdmin property
-      adminStatus.style.color = user.isAdmin ? "green" : "red";
-    })
-    .catch((error) => {
-      console.error("Error fetching user details:", error);
-    });
+          const isAdminText = user.isVerified ? "Accepted By Admin" : "Not Accepted By Admin";
+          const adminStatus = document.getElementById("adminStatus");
+          adminStatus.textContent = isAdminText;
+
+          // Hide or show the admin status based on the isAdmin property
+          adminStatus.style.color = user.isVerified ? "green" : "red";
+      })
+      .catch((error) => {
+          console.error("Error fetching user details:", error);
+      });
 });
 
 function previewImage() {
