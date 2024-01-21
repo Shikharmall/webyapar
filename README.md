@@ -10,6 +10,7 @@
 
 ## Frontend 
    Technologies Used - HTML, CSS, Javascript
+   
     Run - 
        Open html file in browser
 
