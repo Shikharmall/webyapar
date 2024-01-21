@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Side | Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+  <!--<div class="vh-100 w-100 m-0 p-0">
+    <div class="container h-100 m-0 w-100 p-0">
+      <div class="row d-flex align-items-center justify-content-center h-100 m-0">
+        <div class="col-md-7 col-lg-10 col-xl-6">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
+            alt="Phone image" />
+        </div>
+        <div class="col-md-7 col-lg-6 col-xl-4 offset-xl-1 m-0">
+          <div class="d-flex justify-content-center">
+            <h2 style="color: #646464">Admin Login</h2>
+          </div>
+          <form class="w-100">
+            <br /><br /><br />
+            <div class="form-outline mb-4 w-100">
+              <div class="col-sm-10 w-100">
+                <input type="text" class="form-control" id="inputPassword" placeholder="User ID" />
+              </div>
+            </div>
+
+            <div class="form-outline mb-4 w-100">
+              <div class="col-sm-10 w-100">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+              </div>
+            </div>
+
+            <br />
+
+            <div class="form-outline mb-4 w-100">
+              <div class="col-sm-10 w-100">
+                <button type="submit" class="btn btn-primary w-100">
+                  Login
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+  <div class="d-flex flex-wrap">
+    <div style="background-color: #03013B; width: 65%; height: 100vh;"
+      class="d-flex justify-content-center align-items-center ">
+      <div style="background-color: #FFFFFF; width: 40%; height: 25%;"
+        class="d-flex justify-content-center align-items-center">
+        <h1 style="color: #0500FF;">LOGO</h1>
+      </div>
+    </div>
+    <div style=" width: 35%; height: 100vh;" class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex justify-content-center">
+        <h2 style="color: #646464">Admin Login</h2>
+      </div>
+      <br /><br /><br />
+      <form class="d-flex flex-column justify-content-center" style="width: 80%;" id="loginForm">
+        <div class="form-outline mb-4 w-100">
+          <div class="col-sm-10 w-100">
+            <input type="text" class="form-control" placeholder="User ID" id="user_id" name="user_id" />
+          </div>
+        </div>
+
+        <div class="form-outline mb-4 w-100">
+          <div class="col-sm-10 w-100">
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
+          </div>
+        </div>
+
+        <div class="form-outline mb-4 w-100">
+          <div class="col-sm-10 w-100">
+            <button type="submit" class="btn w-100" style="background-color: #0500FF; color: #ffffff;">
+              Login
+            </button>
+          </div>
+        </div>
+
+        <div id="response"></div>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="./javascript/loginAdmin.js"></script>
+</body>
+
+</html>

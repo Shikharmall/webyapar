@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+  <!--<section class="vh-100">
+        <div class="container h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 border-right border-primary">
+                    <div class="d-flex justify-content-center">
+                        <h2 style="color: #646464">Create User</h2>
+                    </div>
+                    <form>
+                        <br /><br /><br />
+                        <div class="form-outline mb-4">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword" placeholder="User ID" />
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="form-outline mb-4">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
+                    <div class="d-flex justify-content-center">
+                        <h2 style="color: #646464">View User</h2>
+                    </div>
+                    <form>
+                        <br /><br /><br />
+                        <div class="form-outline mb-4">
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword" placeholder="User ID" />
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="form-outline mb-4">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+  <div class="d-flex flex-wrap">
+    <div style=" width: 50%; height: 100vh; border-right: 1px solid #D3D3D3;"
+      class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex justify-content-center">
+        <h2 style="color: #646464">Create User</h2>
+      </div>
+      <br /><br /><br />
+      <form class="d-flex flex-column justify-content-center" style="width: 60%;" id="addDataForm">
+        <div class="form-outline mb-4 w-100">
+          <div class="col-sm-10 w-100">
+            <label for="user_id">User ID</label>
+            <input type="text" class="form-control" id="user_id" name="user_id" />
+          </div>
+        </div>
+
+        <div class="form-outline mb-4 w-100">
+          <div class="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" />
+          </div>
+        </div>
+
+        <div class="form-outline mb-4 w-100">
+          <div class="col-sm-10 w-100">
+            <button type="submit" class="btn w-100" style="background-color: #0500FF; color: #ffffff;">
+              Login
+            </button>
+          </div>
+        </div>
+
+        <div id="response"></div>
+
+      </form>
+    </div>
+    <div style=" width: 50%; height: 100vh; border-left: 1px solid #D3D3D3;"
+      class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex justify-content-center">
+        <h2 style="color: #646464">View User</h2>
+      </div>
+      <br /><br /><br />
+      <div class="d-flex flex-column justify-content-center" style="width: 60%;" id="viewUser">
+
+        <!--<div class="form-outline m-4 w-100" style="background-color: #CDCDCD;">
+          <div class="col-sm-10 w-100">
+            <input type="text" class="form-control" placeholder="User ID" id="user_id" name="user_id" value="5568" />
+          </div>
+        </div>-->
+        <ul id="userList"></ul>
+
+        <div class="form-outline mb-4 d-flex justify-content-end align-items-end">
+          <div class="">
+            <button
+              style="color: #ffffff; background-color: #0500FF; border: 2px solid #0500FF; border-radius: 4px; padding: 10px; padding-right: 20px; padding-left: 20px;"
+              onclick="window.location.href = './userTable.html';">
+              View</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="./javascript/addUser.js"></script>
+  <script src="./javascript/getUsers.js"></script>
+</body>
+
+</html>
