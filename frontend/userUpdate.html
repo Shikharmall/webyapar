@@ -38,14 +38,14 @@
 
 
     <div style="width: 100%; height: 100vh;">
-        <div class="container h-100">
-            <div style="float: right;">
+        <div class=" h-100 p-3">
+            <div class="d-flex align-items-end justify-content-end ">
                 <button
                     style="background-color: #ffffff; color: #0500FF; border: 2px solid #0500FF; border-radius: 4px; padding: 10px; padding-right: 20px; padding-left: 20px;"
                     onclick="toggleDisplayShow()">
                     View</button>
             </div>
-            <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="row d-flex align-items-center justify-content-center ">
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
                     <form id="imageUploadForm">
                         <br /><br /><br />
@@ -59,15 +59,18 @@
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <label>Photo</label>
                             <div class="col-sm-10">
-                                <input type="file" id="imageInput" accept="image/*" onchange="previewImage()" required>
-
-
+                                <label for="imageInput" class="w-100">
+                                    Photo
+                                    <div id="imagePreview" style="background-color: #EEEEEE; width: 100%; height: 200px; border-radius: 5px; border: 1px dashed #CDCDCD;" class="d-flex align-items-center justify-content-center">
+                                    </div>
+                                </label>
+                                <input type="file" style="display:none;" id="imageInput" accept="image/*"
+                                    onchange="previewImage()" required>
                             </div>
+
                         </div>
 
-                        <div id="imagePreview"></div>
 
                         <br />
 

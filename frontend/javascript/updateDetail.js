@@ -14,6 +14,9 @@ function previewImage() {
     reader.onload = function (e) {
       const img = document.createElement("img");
       img.src = e.target.result;
+      
+      img.style.height = "100%";
+
       preview.appendChild(img);
     };
 
