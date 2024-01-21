@@ -7,59 +7,43 @@
   <title>User Side | Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <style>
+    #subflex {
+      background-color: #03013B;
+      width: 65%;
+      height: 100vh;
+    }
+
+    #subflex1 {
+      width: 35%;
+      height: 100vh;
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: 700px) {
+      #flex1 {
+        flex-direction: column;
+      }
+
+      #subflex {
+        width: 100%;
+      }
+      #subflex1 {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!--<div class="vh-100 w-100 m-0 p-0">
-    <div class="container h-100 m-0 w-100 p-0">
-      <div class="row d-flex align-items-center justify-content-center h-100 m-0">
-        <div class="col-md-7 col-lg-10 col-xl-6">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
-            alt="Phone image" />
-        </div>
-        <div class="col-md-7 col-lg-6 col-xl-4 offset-xl-1 m-0">
-          <div class="d-flex justify-content-center">
-            <h2 style="color: #646464">Admin Login</h2>
-          </div>
-          <form class="w-100">
-            <br /><br /><br />
-            <div class="form-outline mb-4 w-100">
-              <div class="col-sm-10 w-100">
-                <input type="text" class="form-control" id="inputPassword" placeholder="User ID" />
-              </div>
-            </div>
 
-            <div class="form-outline mb-4 w-100">
-              <div class="col-sm-10 w-100">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
-              </div>
-            </div>
-
-            <br />
-
-            <div class="form-outline mb-4 w-100">
-              <div class="col-sm-10 w-100">
-                <button type="submit" class="btn btn-primary w-100">
-                  Login
-                </button>
-              </div>
-            </div>
-
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>-->
-
-  <div class="d-flex flex-wrap">
-    <div style="background-color: #03013B; width: 65%; height: 100vh;"
-      class="d-flex justify-content-center align-items-center ">
+  <div class="d-flex" id="flex1">
+    <div id="subflex" class="d-flex justify-content-center align-items-center">
       <div style="background-color: #FFFFFF; width: 40%; height: 25%;"
         class="d-flex justify-content-center align-items-center">
         <h1 style="color: #0500FF;">LOGO</h1>
       </div>
     </div>
-    <div style=" width: 35%; height: 100vh;" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center" id="subflex1">
       <div class="d-flex justify-content-center">
         <h2 style="color: #646464">User Login</h2>
       </div>
@@ -73,7 +57,7 @@
 
         <div class="form-outline mb-4 w-100">
           <div class="col-sm-10 w-100">
-            <input type="password" class="form-control" placeholder="Password" id="password" name="password"  />
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
           </div>
         </div>
 

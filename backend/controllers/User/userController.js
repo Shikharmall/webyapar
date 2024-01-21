@@ -47,9 +47,6 @@ const updateUserDetail = async (req, res) => {
   try {
     const { user_id, name } = req.body;
     const image = req.file.filename;
-    console.log(image);
-    console.log(user_id);
-    console.log(name);
 
     const userUpdateData = await User.findOneAndUpdate(
       { user_id: user_id },
@@ -145,15 +142,17 @@ const getUserDetails = async (req, res) => {
   try {
     const { user_id } = req.query;
 
-    const userData = await User.findOne({ user_id: user_id });
+    const user = await User.findOne({ user_id: user_id });
 
-    if (!userData) {
+    if (!user) {
       return res
         .status(404)
         .json({ status: "failed", message: "User Not Exit" });
     }
 
-    return res.status(200).json({ status: "success", data: userData });
+    return res.json(user);
+
+    //return res.status(200).json({ status: "success", data: userData });
   } catch (error) {
     res.status(500).json({ status: "failed", message: error.message });
   }

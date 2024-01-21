@@ -22,18 +22,47 @@
     background-color: rgba(0,0,0, 0.4); width: 100%;" id="myDiv">
         <div
             style="position: fixed; right: 0; top: 0; height: 100vh; background-color: #ffffff; width: 35%; padding: 3%;">
-            <div class="d-flex align-items-end justify-end">
+            <div class="d-flex align-items-end justify-content-end">
                 <button
                     style="background-color: #ffffff; color: #0500FF; border: 2px solid #0500FF; border-radius: 4px; padding: 10px; padding-right: 20px; padding-left: 20px;"
                     onclick="toggleDisplayVanish()">
                     Back</button>
             </div>
-            <div class="row d-flex align-items-center justify-content-center h-100">
-                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
+            <div class="d-flex align-items-center justify-content-center ">
+                <div class="w-100 d-flex flex-column justify-content-center">
+                    <br /><br /><br />
+
+                    <div class="form-outline mb-4 ">
+                        <label>Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nameInputSide" name="nameInputSide" />
+                        </div>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <div class="col-sm-10">
+                            <label for="imageInput" class="w-100">
+                                Photo
+                                <div id="imagePreview"
+                                    style="background-color: #EEEEEE; width: 100%; height: 200px; border-radius: 5px; border: 1px dashed #CDCDCD;"
+                                    class="d-flex align-items-center justify-content-center">
+                                    <!-- Image will be dynamically added here -->
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-outline mb-4" class="d-flex align-items-center justify-content-center">
+                        <div class="col-sm-10">
+                            <h3 id="adminStatus" class="text-success">Accepted By Admin</h3>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -49,7 +78,8 @@
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
                     <form id="imageUploadForm">
                         <br /><br /><br />
-                        <!-- Email input -->
+
+
                         <div class="form-outline mb-4">
                             <label>Name</label>
                             <div class="col-sm-10">
@@ -57,12 +87,13 @@
                             </div>
                         </div>
 
-                        <!-- Password input -->
                         <div class="form-outline mb-4">
                             <div class="col-sm-10">
                                 <label for="imageInput" class="w-100">
                                     Photo
-                                    <div id="imagePreview" style="background-color: #EEEEEE; width: 100%; height: 200px; border-radius: 5px; border: 1px dashed #CDCDCD;" class="d-flex align-items-center justify-content-center">
+                                    <div id="imagePreview"
+                                        style="background-color: #EEEEEE; width: 100%; height: 200px; border-radius: 5px; border: 1px dashed #CDCDCD;"
+                                        class="d-flex align-items-center justify-content-center">
                                     </div>
                                 </label>
                                 <input type="file" style="display:none;" id="imageInput" accept="image/*"

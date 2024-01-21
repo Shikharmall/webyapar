@@ -1,24 +1,4 @@
-// script.js
 
-/*document.addEventListener("DOMContentLoaded", function () {
-  const userListElement = document.getElementById("userList");
-
-  // Fetch user details from the server
-  fetch("http://localhost:5174/getAllUserDetails")
-    .then((response) => response.json())
-    .then((users) => {
-      users.forEach((user) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `ID: ${user.id}, Name: ${user.name}, Email: ${user.email}`;
-        userListElement.appendChild(listItem);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching user details:", error);
-    });
-});*/
-
-// script.js
 
 document.addEventListener("DOMContentLoaded", function () {
   const userListElement = document.getElementById("userList");

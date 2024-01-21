@@ -1,3 +1,37 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const user_id = localStorage.getItem("user_id");
+
+  // Fetch user details from the server
+  fetch(`http://localhost:5174/getUserDetails?user_id=${user_id}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json(); // Parse the response body as JSON
+    })
+    .then((user) => {
+      console.log("Parsed JSON:", user);
+
+      // Set user details to the form
+      document.getElementById("nameInputSide").value = user.name || "";
+      
+      const imagePreview = document.getElementById("imagePreviewSide");
+      const img = document.createElement("img");
+      img.src = user.image || "";
+      imagePreview.appendChild("../../backend/uploads/".img);
+
+      const isAdminText = user.isAdmin ? "Accepted By Admin" : "Not Accepted By Admin";
+      const adminStatus = document.getElementById("adminStatus");
+      adminStatus.textContent = isAdminText;
+
+      // Hide or show the admin status based on the isAdmin property
+      adminStatus.style.color = user.isAdmin ? "green" : "red";
+    })
+    .catch((error) => {
+      console.error("Error fetching user details:", error);
+    });
+});
+
 function previewImage() {
   const input = document.getElementById("imageInput");
   const preview = document.getElementById("imagePreview");
@@ -14,7 +48,7 @@ function previewImage() {
     reader.onload = function (e) {
       const img = document.createElement("img");
       img.src = e.target.result;
-      
+
       img.style.height = "100%";
 
       preview.appendChild(img);
