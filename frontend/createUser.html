@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Admin Side</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <style>
@@ -31,6 +31,10 @@
 
       #subflex1 {
         width: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
       }
     }
   </style>
@@ -74,19 +78,14 @@
         <h2 style="color: #646464">View User</h2>
       </div>
       <br /><br /><br />
-      <div class="d-flex flex-column justify-content-center" style="width: 60%;" id="viewUser">
+      <div class="d-flex flex-column justify-content-center" style="width: 80%;" id="viewUser">
+        <div id="userList">
+        </div>
 
-        <!--<div class="form-outline m-4 w-100" style="background-color: #CDCDCD;">
-          <div class="col-sm-10 w-100">
-            <input type="text" class="form-control" placeholder="User ID" id="user_id" name="user_id" value="5568" />
-          </div>
-        </div>-->
-        <ul id="userList"></ul>
-
-        <div class="form-outline mb-4 d-flex justify-content-end align-items-end">
-          <div class="">
+        <div class="form-outline mb-4 d-flex justify-content-end align-items-end m-3">
+          <div>
             <button
-              style="color: #ffffff; background-color: #0500FF; border: 2px solid #0500FF; border-radius: 4px; padding: 10px; padding-right: 20px; padding-left: 20px;"
+              style="color: #ffffff; background-color: #0500FF; border: 2px solid #0500FF; border-radius: 4px; padding: 10px; padding-right: 30px; padding-left: 30px;"
               onclick="window.location.href = './userTable.html';">
               View</button>
           </div>

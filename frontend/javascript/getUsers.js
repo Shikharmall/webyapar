@@ -15,26 +15,54 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((users) => {
       console.log("Parsed JSON:", users);
       if (Array.isArray(users)) {
-        const userListElement = document.getElementById("userList"); // Assuming you have a container element with the id 'userList'
+        // Get the last two users
         const lastTwoUsers = users.slice(-2);
 
-        lastTwoUsers.forEach((user) => {
+        lastTwoUsers.forEach((user, index) => {
           // Create the outer div element
           const outerDiv = document.createElement("div");
-          outerDiv.classList.add("form-outline", "m-4", "w-100");
-          outerDiv.style.backgroundColor = "#cce5ff";
+          outerDiv.style.backgroundColor = "#EAECFF";
+          outerDiv.style.borderRadius = "5px";
+          outerDiv.style.padding = "15px";
+          outerDiv.style.position = "relative";
 
-          // Create the inner div element with class 'col-sm-10' and 'w-100'
+          // Create the absolute position div
+          const absoluteDiv = document.createElement("div");
+          absoluteDiv.style.position = "absolute";
+          absoluteDiv.style.right = "0";
+          absoluteDiv.style.top = "0";
+          absoluteDiv.style.padding = "5px";
+
+          // Create the number indicator div
+          const numberDiv = document.createElement("div");
+          numberDiv.classList.add("d-flex", "justify-content-center", "align-items-center");
+          numberDiv.style.backgroundColor = "#0500FF";
+          numberDiv.style.color = "#ffffff";
+          numberDiv.style.borderRadius = "50%";
+          numberDiv.style.padding = "15px";
+          numberDiv.style.width = "10px";
+          numberDiv.style.height = "10px";
+          outerDiv.classList.add("m-3");
+          numberDiv.innerText = index + 1;
+
+          // Append the number indicator div to the absolute position div
+          absoluteDiv.appendChild(numberDiv);
+
+          // Append the absolute position div to the outer div
+          outerDiv.appendChild(absoluteDiv);
+
+          // Create the inner div element
           const innerDiv = document.createElement("div");
-          innerDiv.classList.add("col-sm-10", "w-100");
+          innerDiv.classList.add("d-flex", "justify-content-center", "align-items-center");
 
           // Create the input element
           const inputElement = document.createElement("input");
           inputElement.type = "text";
-          inputElement.classList.add("form-control");
-          inputElement.placeholder = "User ID";
-          inputElement.id = "user_id";
-          inputElement.name = "user_id";
+          inputElement.style.border = "none";
+          inputElement.style.borderRadius = "3px";
+          inputElement.style.margin = "6%";
+          inputElement.style.padding = "2%";
+          inputElement.style.width = "70%";
           inputElement.value = user.user_id;
 
           // Append the input element to the inner div

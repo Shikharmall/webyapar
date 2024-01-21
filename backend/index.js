@@ -29,7 +29,6 @@ const cors = require("cors");
 
 let allowedOrigins = [
   "http://localhost:5173",
-  "https://language-learning-game-five.vercel.app",
 ];
 
 app.use(
